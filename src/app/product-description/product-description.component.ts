@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Album } from 'app/album';
-import { ProductService } from 'app/product.service';
+import { ProductService } from '../product.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -8,19 +8,14 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './product-description.component.html',
   styleUrls: ['./product-description.component.css']
 })
-export class ProductDescriptionComponent implements OnInit, OnDestroy {
+export class ProductDescriptionComponent implements OnInit {
 
-  sub:Subscription;
-  albumInfo: Album;
+  albumInfo;
 
   constructor(private _productService:ProductService ) { }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
-
   ngOnInit() {
-    this.sub = this._productService.getAlbum(1)
+    this._productService.getAlbum(1)
     .subscribe(response => this.albumInfo = response);
   }
 
