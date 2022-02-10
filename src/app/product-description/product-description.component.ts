@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Album } from 'app/album';
+import { Album } from '../album';
 import { ProductService } from '../product.service';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class ProductDescriptionComponent implements OnInit {
 
-  albumInfo;
+  albumInfo: Album;
 
   constructor(private _productService:ProductService ) { }
 
