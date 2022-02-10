@@ -4,8 +4,8 @@ import { Album } from "../album";
 
 @Component({
   selector: "app-product-tracklist",
-  templateUrl: "./product-tracklist.component.html",
-  styleUrls: ["./product-tracklist.component.css"],
+  templateUrl: "./product-tracklisting.component.html",
+  styleUrls: ["./product-tracklisting.component.css"],
 })
 export class ProductTracklistComponent implements OnInit {
   albumInfo: Album;
